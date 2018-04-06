@@ -13,6 +13,6 @@ for i in $(cat /var/log/rejectip)
     rep=$(iptables-save | grep $i)
     if [[ -z $rep ]];then
         /sbin/iptables -A INPUT -s $i -m limit --limit 5/m -j ACCEPT
-        echo ?$i limited at `date`?>>/var/log/ddos-ip
+        echo "$i limited at `date`">/var/log/ddos-ip
     fi
 }
