@@ -1,8 +1,0 @@
-ssh-keygen
-sudo su
-vim /etc/ssh/sshd_config
-ssh-keygen
-cat /home/shiyanlou/.ssh/id_rsa.pub | tee -a /root/.ssh/authorized_keys
-service ssh restart
-exit
-ssh root@localhost
